@@ -20,7 +20,7 @@ function add(pokemon) {
     pokemonLIst.push(pokemon);
 }
 
-}})();
+})();
 
 pokemonList.forEach(function(pokemonList){
   document.write(pokemonList.name + ' (Height: ' + pokemonList.height + ')' + '<br>')
