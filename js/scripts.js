@@ -14,13 +14,11 @@ let pokemonList = [
 ];
 // loop that iterates name with height
 // added a conditional
-for (let i=0; i < pokemonList.length; i++) {
-        document.write(pokemonList[i].name + " (Height: " + pokemonList[i].height + ")");
-if (pokemonList[i].height >=.7) {
-            document.write('This is a bigger pokemon!');
-        }
-else if (pokemonList[i].height <.5) {
-            document.write('This is a smaller pokemon!');
-        }
-
+for (let i = 0; i < pokemonList.length; i++){
+  if (pokemonList[i].height >=.7) {
+            document.write('<p>' + pokemonList[i].name + ' (Height: ' + pokemonList[i].height + ') - This is a bigger pokemon!')
+  }
+else if (pokemonList[i].height <.7) {
+  document.write('<p>' + pokemonList[i].name + ' (Height: ' + pokemonList[i].height + ')')
+}
 }
