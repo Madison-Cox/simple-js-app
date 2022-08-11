@@ -17,11 +17,17 @@ function getAll() {
     return pokemonList;
 }
 function add(pokemon) {
-    pokemonLIst.push(pokemon);
+    pokemonList.push(pokemon);
 }
 
 })();
+let pokemonList = pokemonRepository.getAll();
 
-pokemonList.forEach(function(pokemonList){
-  document.write(pokemonList.name + ' (Height: ' + pokemonList.height + ')' + '<br>')
-})
+pokemonList.forEach(function(pokemon) {
+  if(pokemon.height>=.7) {
+    document.write('<p>'+ pokemon.name + '(Height: ' + pokemon.height + ')' + '-This is a bigger pokemon'+'</p>')
+  }
+  else {
+    document.write('<p>' + pokemon.name + '(Height: ' + pokemon.height + ')')
+  }
+});
