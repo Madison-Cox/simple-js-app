@@ -19,6 +19,10 @@ function getAll() {
 function add(pokemon) {
     pokemonList.push(pokemon);
 }
+return {
+    getAll: getAll,
+    add: add
+};
 
 })();
 let pokemonList = pokemonRepository.getAll();
