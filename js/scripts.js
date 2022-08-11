@@ -1,3 +1,4 @@
+let pokemonRepository = (function(){
 let pokemonList = [
     {
         name: 'Charmander',
@@ -12,8 +13,15 @@ let pokemonList = [
         height: '.7',
         type: ['grass','poison']},
 ];
-// loop that iterates name with height
-// added a conditional
+function getAll() {
+    return pokemonList;
+}
+function add(pokemon) {
+    pokemonLIst.push(pokemon);
+}
+
+}})();
+
 pokemonList.forEach(function(pokemonList){
   document.write(pokemonList.name + ' (Height: ' + pokemonList.height + ')' + '<br>')
 })
