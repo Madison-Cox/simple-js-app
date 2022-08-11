@@ -16,9 +16,9 @@ let pokemonList = [
 // added a conditional
 for (let i = 0; i < pokemonList.length; i++){
   if (pokemonList[i].height >=.7) {
-            document.write('<p>' + pokemonList[i].name + ' (Height: ' + pokemonList[i].height + ') - This is a bigger pokemon!')
+      document.write('<p>' + pokemonList[i].name + ' (Height: ' + pokemonList[i].height + ') - This is a bigger pokemon!')
   }
-else if (pokemonList[i].height <.7) {
-  document.write('<p>' + pokemonList[i].name + ' (Height: ' + pokemonList[i].height + ')')
+  else if (pokemonList[i].height <.7) {
+      document.write('<p>' + pokemonList[i].name + ' (Height: ' + pokemonList[i].height + ')')
 }
 }
