@@ -2,16 +2,19 @@ let pokemonRepository = (function(){
 let pokemonList = [
     {
         name: 'Charmander',
-        height: '.6',
-        type: 'fire'},
+        height: .6,
+        type: 'Fire'},
     {
         name: 'Mudkip',
-        height: '.4',
-        type: 'water'},
+        height: .4,
+        type: 'Water'},
     {
         name: 'Bulbasaur',
-        height: '.7',
-        type: ['grass','poison']},
+        height: .7,
+        type: ['Grass','Poison']},
+    {   name: 'Pikachu',
+        height: .4,
+        type: 'Electric'}
 ];
 function getAll() {
     return pokemonList;
