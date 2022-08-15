@@ -44,6 +44,7 @@ function addListItem(pokemon){
     button.addEventListener('click', function(){
         showDetails(pokemon);
     })
+//shows pokemon information on console
 function showDetails(pokemon){
     console.log(pokemon);
     }
