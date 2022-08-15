@@ -12,15 +12,25 @@ let pokemonList = [
         name: 'Bulbasaur',
         height: .7,
         type: ['Grass','Poison']},
-    {   name: 'Pikachu',
+    {
+        name: 'Pikachu',
         height: .4,
         type: 'Electric'}
 ];
+
+function add(pokemon) {
+    if (
+        typeof pokemon === "object" &&
+        'name' in pokemon &&
+        'height' in pokemon &&
+        'types' in pokemon
+    ) {
+        pokemonList.push(pokemon);
+} else {
+    console.log('Pokemon is not correct');
+}
 function getAll() {
     return pokemonList;
-}
-function add(pokemon) {
-    pokemonList.push(pokemon);
 }
 return {
     getAll: getAll,
@@ -28,13 +38,15 @@ return {
 };
 
 })();
+
 let pokemonList = pokemonRepository.getAll();
 
 pokemonList.forEach(function(pokemon) {
-  if(pokemon.height>=.7) {
-    document.write('<p>'+ pokemon.name + '(Height: ' + pokemon.height + ')' + '-This is a bigger pokemon'+'</p>')
-  }
-  else {
-    document.write('<p>' + pokemon.name + '(Height: ' + pokemon.height + ')')
-  }
+let list = document.querySelector('.pokemon-list');
+let listItem = document.createElement('li');
+let button = document.createElement('button');
+button.innerText = "placeholder"
+button.classList.add('button-class');
+listItem.appendChild(button);
+list.appendChild(listItem);
 });
