@@ -43,7 +43,7 @@ function addListItem(pokemon){
     list.appendChild(listItem);
     button.addEventListener('click', function(){
         showDetails(pokemon);
-    }
+    })
 function showDetails(pokemon){
     console.log(pokemon);
     }
