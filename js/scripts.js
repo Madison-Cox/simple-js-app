@@ -20,7 +20,7 @@ let pokemonList = [
 
 function add(pokemon) {
     if (
-        typeof pokemon === "object" &&
+        typeof pokemon === 'object' &&
         'name' in pokemon &&
         'height' in pokemon &&
         'types' in pokemon
@@ -28,13 +28,14 @@ function add(pokemon) {
         pokemonList.push(pokemon);
 } else {
     console.log('Pokemon is not correct');
+    }
 }
 function getAll() {
     return pokemonList;
 }
 return {
+    add: add,
     getAll: getAll,
-    add: add
 };
 
 })();
@@ -45,7 +46,7 @@ pokemonList.forEach(function(pokemon) {
 let list = document.querySelector('.pokemon-list');
 let listItem = document.createElement('li');
 let button = document.createElement('button');
-button.innerText = 'placeholder'
+button.innerText = 'placeholder';
 button.classList.add('button-class');
 listItem.appendChild(button);
 list.appendChild(listItem);
