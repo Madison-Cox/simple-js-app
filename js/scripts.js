@@ -45,7 +45,7 @@ function loadList() {
     }
 function loadDetails(item) {
     let url = item.detailsUrl;
-    return fetch(url).then(function (reponse) {
+    return fetch(url).then(function (response) {
         return response.json();
     }).then(function (details) {
         item.imageUrl = details.sprites.front_default;
