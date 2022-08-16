@@ -24,7 +24,7 @@ function addListItem(pokemon){
     button.classList.add('button-class');
     listItem.appendChild(button);
     list.appendChild(listItem);
-    button.addEventListener('click', function(){
+    button.addEventListener('click', function(event){
         showDetails(pokemon);
     })
 }
@@ -43,15 +43,31 @@ function loadList() {
             console.error(e);
         })
     }
+function loadDetails(item) {
+    let url = item.detailsUrl;
+    return fetch(url).then(function (reponse) {
+        return response.json();
+    }).then(function (details) {
+        item.imageUrl = details.sprites.front_default;
+        item.height = details.height;
+        item.types = details.types;
+    }).catch(function (e) {
+        console.error(e);
+    });
+}
 //shows pokemon information on console
-function showDetails(pokemon){
-    console.log(pokemon);
-    }
+function showDetails(item){
+    loadDetails(item).then(function () {
+        console.log(item);
+    });
+}
 return {
     add: add,
     getAll: getAll,
     addListItem: addListItem,
-    loadList: loadList
+    loadList: loadList,
+    loadDetails: loadDetails,
+    showDetails: showDetails
     };
 })();
 
