@@ -29,10 +29,18 @@ h1{
 .pokemon-list {
     list-style-type: none;
 }
-#pokeModal {
+.model-close {
+    float: right;
+    -webkite-appearance: none;
+    border: 0;
+    background: none;
+    color: #777;
+    text-decoration: underline;
+}
+#poke-modal {
 display: none;
 }
-#pokeModal.is-visible {
+#poke-modal.is-visible {
     position: fixed;
     padding: 20px;
     box-sizing: border-box;
@@ -40,9 +48,19 @@ display: none;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #ff0000;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 999;
     overflow: auto;
-    display: grid;
+    display: block;
     text-align: center;
+}
+.modal {
+    margin: auto;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 15px;
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
 }

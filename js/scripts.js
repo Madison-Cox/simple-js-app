@@ -94,16 +94,17 @@ function showDetails(item){
                 if (e.key === 'Escape' && pokeModal.classList.contains('is-visible')) {
                     hideModal();
                 }
-            })
+            });
+            let pokeModal = document.querySelector('#poke-modal');
             pokeModal.addEventListener('click', (e) => {
                 let target = e.target;
                 if (target === pokeModal); {
                     hideModal();
                 }
-                document.querySelector('.button-class').addEventListener('click', () => {showModal('Modal Title', 'This is the modal content');
-            })
         })
+        document.querySelector('.button-class').addEventListener('click', () => {showModal('Modal Title', 'This is the modal content');
     })
+})
 };
 
 
