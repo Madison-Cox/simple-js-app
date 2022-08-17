@@ -58,9 +58,55 @@ function loadDetails(item) {
 //shows pokemon information on console
 function showDetails(item){
     loadDetails(item).then(function () {
-        console.log(item);
-    });
-}
+        function showModal(title, text){
+            let pokeModal = document.querySelector('#poke-modal');
+                pokeModal.innerHTML = '';
+
+            let modal = document.createElement('div');
+                modal.classList.add('modal');
+
+            let closeButtonElement = document.createElement('button');
+                closeButtonElement.classList.add('modal-close');
+                closeButtonElement.innerText = 'Close';
+                closeButtonElement.addEventListener('click', hideModal);
+
+            let titleElement = document.createElement('h1');
+                titleElement.innerText = title;
+
+            let contentElement = document.createElement('p');
+                contentElement.innerText = text;
+
+                modal.appendChild(closeButtonElement);
+                modal.appendChild(titleElement);
+                modal.appendChild(contentElement);
+                pokeModal.appendChild(modal);
+
+
+            pokeModal.classList.add('is-visible');
+            }
+
+            function hideModal() {
+                let pokeModal = document.querySelector('#poke-modal');
+                pokeModal.classList.remove('is-visible');
+            }
+            window.addEventListener('keydown', (e) => {
+                let pokeModal = document.querySelector('#poke-modal');
+                if (e.key === 'Escape' && pokeModal.classList.contains('is-visible')) {
+                    hideModal();
+                }
+            })
+            pokeModal.addEventListener('click', (e) => {
+                let target = e.target;
+                if (target === pokeModal); {
+                    hideModal();
+                }
+                document.querySelector('.button-class').addEventListener('click', () => {showModal('Modal Title', 'This is the modal content');
+            })
+        })
+    })
+};
+
+
 return {
     add: add,
     getAll: getAll,
