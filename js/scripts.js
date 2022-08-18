@@ -95,7 +95,9 @@ function hideModal() {
         }
     });
     let pokeModal = document.querySelector('#poke-modal');
+
     pokeModal.addEventListener('click', (e) => {
+
     let target = e.target;
         if (target === pokeModal); {
             hideModal();
