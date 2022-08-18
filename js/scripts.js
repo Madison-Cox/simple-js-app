@@ -55,58 +55,57 @@ function loadDetails(item) {
         console.error(e);
     });
 }
+function showModal(title, text, imageUrl){
+    let pokeModal = document.querySelector('#poke-modal');
+        pokeModal.innerHTML = '';
+
+    let modal = document.createElement('div');
+        modal.classList.add('modal');
+
+    let closeButtonElement = document.createElement('button');
+        closeButtonElement.classList.add('modal-close');
+        closeButtonElement.innerText = 'Close';
+
+
+    let titleElement = document.createElement('h3');
+        titleElement.innerText = item.name;
+
+    let contentElement = document.createElement('p');
+        contentElement.innerText = 'Height= ' + item.height;
+    let pictureElement = document.createElement('img');
+        pictureElement.src = item.imageUrl;
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(titleElement);
+        modal.appendChild(contentElement);
+        modal.appendChild(pictureElement);
+        pokeModal.appendChild(modal);
+
+
+    pokeModal.classList.add('is-visible');
+    }
+function hideModal() {
+    let pokeModal = document.querySelector('#poke-modal');
+        pokeModal.classList.remove('is-visible');
+    }
+    window.addEventListener('keydown', (e) => {
+    let pokeModal = document.querySelector('#poke-modal');
+        if (e.key === 'Escape' && pokeModal.classList.contains('is-visible')) {
+            hideModal();
+        }
+    });
+    let pokeModal = document.querySelector('#poke-modal');
+    pokeModal.addEventListener('click', (e) => {
+    let target = e.target;
+        if (target === pokeModal); {
+            hideModal();
+        }
+})
+
 //shows pokemon information on console
 function showDetails(item){
     loadDetails(item).then(function () {
-        function showModal(title, text, imageUrl){
-            let pokeModal = document.querySelector('#poke-modal');
-                pokeModal.innerHTML = '';
-
-            let modal = document.createElement('div');
-                modal.classList.add('modal');
-
-            let closeButtonElement = document.createElement('button');
-                closeButtonElement.classList.add('modal-close');
-                closeButtonElement.innerText = 'Close';
-
-
-            let titleElement = document.createElement('h3');
-                titleElement.innerText = item.name;
-
-            let contentElement = document.createElement('p');
-                contentElement.innerText = 'Height= ' + item.height;
-            let pictureElement = document.createElement('img');
-                pictureElement.src = item.imageUrl;
-                modal.appendChild(closeButtonElement);
-                modal.appendChild(titleElement);
-                modal.appendChild(contentElement);
-                modal.appendChild(pictureElement);
-                pokeModal.appendChild(modal);
-
-
-            pokeModal.classList.add('is-visible');
-            }
-
-            function hideModal() {
-                let pokeModal = document.querySelector('#poke-modal');
-                pokeModal.classList.remove('is-visible');
-            }
-            window.addEventListener('keydown', (e) => {
-                let pokeModal = document.querySelector('#poke-modal');
-                if (e.key === 'Escape' && pokeModal.classList.contains('is-visible')) {
-                    hideModal();
-                }
-            });
-            let pokeModal = document.querySelector('#poke-modal');
-            pokeModal.addEventListener('click', (e) => {
-                let target = e.target;
-                if (target === pokeModal); {
-                    hideModal();
-                }
+        showModal(item.name, item.height, item.imageUrl);
         })
-        document.querySelector('li').addEventListener('click', () => {showModal();
-    })
-})
 };
 
 
@@ -116,7 +115,9 @@ return {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showDetails: showDetails
+    showDetails: showDetails,
+    hideModal: hideModal,
+    showModal: showModal,
     };
 })();
 
