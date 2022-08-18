@@ -88,7 +88,7 @@ function showModal(title, text, image){
             if (target === pokeModal); {
                 hideModal();
             }
-    })
+    });
 }
 function hideModal() {
     let pokeModal = document.querySelector('#poke-modal');
