@@ -48,6 +48,7 @@ function loadDetails(item) {
     return fetch(url).then(function (response) {
         return response.json();
     }).then(function (details) {
+        item.name = details.name;
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types;
@@ -55,7 +56,7 @@ function loadDetails(item) {
         console.error(e);
     });
 }
-function showModal(title, text, imageUrl){
+function showModal(title, text, image){
     let pokeModal = document.querySelector('#poke-modal');
         pokeModal.innerHTML = '';
 
@@ -68,12 +69,12 @@ function showModal(title, text, imageUrl){
 
 
     let titleElement = document.createElement('h3');
-        titleElement.innerText = item.name;
+        titleElement.innerText = title;
 
     let contentElement = document.createElement('p');
-        contentElement.innerText = 'Height= ' + item.height;
+        contentElement.innerText = 'Height: ' + text;
     let pictureElement = document.createElement('img');
-        pictureElement.src = item.imageUrl;
+        pictureElement.src = image;
         modal.appendChild(closeButtonElement);
         modal.appendChild(titleElement);
         modal.appendChild(contentElement);
