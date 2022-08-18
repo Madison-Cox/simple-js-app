@@ -58,7 +58,7 @@ function loadDetails(item) {
 //shows pokemon information on console
 function showDetails(item){
     loadDetails(item).then(function () {
-        function showModal(title, text){
+        function showModal(title, text, imageUrl){
             let pokeModal = document.querySelector('#poke-modal');
                 pokeModal.innerHTML = '';
 
@@ -68,17 +68,19 @@ function showDetails(item){
             let closeButtonElement = document.createElement('button');
                 closeButtonElement.classList.add('modal-close');
                 closeButtonElement.innerText = 'Close';
-                closeButtonElement.addEventListener('click', hideModal);
 
-            let titleElement = document.createElement('h1');
-                titleElement.innerText = title;
+
+            let titleElement = document.createElement('h3');
+                titleElement.innerText = item.name;
 
             let contentElement = document.createElement('p');
-                contentElement.innerText = text;
-
+                contentElement.innerText = 'Height= ' + item.height;
+            let pictureElement = document.createElement('img');
+                pictureElement.src = item.imageUrl;
                 modal.appendChild(closeButtonElement);
                 modal.appendChild(titleElement);
                 modal.appendChild(contentElement);
+                modal.appendChild(pictureElement);
                 pokeModal.appendChild(modal);
 
 
@@ -102,7 +104,7 @@ function showDetails(item){
                     hideModal();
                 }
         })
-        document.querySelector('.button-class').addEventListener('click', () => {showModal('Modal Title', 'This is the modal content');
+        document.querySelector('li').addEventListener('click', () => {showModal();
     })
 })
 };
