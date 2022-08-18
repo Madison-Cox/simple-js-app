@@ -66,7 +66,7 @@ function showModal(title, text, image){
     let closeButtonElement = document.createElement('button');
         closeButtonElement.classList.add('modal-close');
         closeButtonElement.innerText = 'Close';
-
+        closeButtonElement.addEventListener('click', hideModal);
 
     let titleElement = document.createElement('h3');
         titleElement.innerText = title;
@@ -81,9 +81,15 @@ function showModal(title, text, image){
         modal.appendChild(pictureElement);
         pokeModal.appendChild(modal);
 
+        pokeModal.classList.add('is-visible');
+        pokeModal.addEventListener('click', (e) => {
 
-    pokeModal.classList.add('is-visible');
-    }
+        let target = e.target;
+            if (target === pokeModal); {
+                hideModal();
+            }
+    })
+}
 function hideModal() {
     let pokeModal = document.querySelector('#poke-modal');
         pokeModal.classList.remove('is-visible');
@@ -94,15 +100,6 @@ function hideModal() {
             hideModal();
         }
     });
-    let pokeModal = document.querySelector('#poke-modal');
-
-    pokeModal.addEventListener('click', (e) => {
-
-    let target = e.target;
-        if (target === pokeModal); {
-            hideModal();
-        }
-})
 
 //shows pokemon information on console
 function showDetails(item){
