@@ -1,7 +1,6 @@
 body{
     background-color: #ff0000;
-    font-size: 30px
-    text-align: left;
+    font-size: 30px;
 }
 h1{
     font-size: 100px;
@@ -28,4 +27,7 @@ h1{
 }
 .pokemon-list {
     list-style-type: none;
+}
+.navbar-brand{
+    font-size: 80px;
 }
