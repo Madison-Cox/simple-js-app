@@ -70,6 +70,7 @@ let elementName = $('<h2>' + item.name + '<h2>');
 //image of element in modal
 let elementImageFront = $('<img class="modal-img" style="width:50%">');
 elementImageFront.attr('src', item.imageUrl);
+elementImageFront.attr('aria-label', item.name)
 //height of element in modal
 let elementHeight = $('<p>' + 'Height: ' + item.height + '</p>');
 //type of element in modal
