@@ -31,3 +31,7 @@ h1{
 .navbar-brand{
     font-size: 80px;
 }
+.list-group{
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    list-style-type: none;
+}
