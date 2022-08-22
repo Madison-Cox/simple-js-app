@@ -31,7 +31,7 @@ function addListItem(item){
         showDetails(item);
     })
 }
-function loadList(item) {
+function loadList() {
     return fetch(apiUrl).then(function (response) {
         return response.json();
         }).then(function (json) {
@@ -87,7 +87,7 @@ function showDetails(item){
     loadDetails(item).then(function () {
         showModal(item);
         })
-};
+}
 
 
 return {
