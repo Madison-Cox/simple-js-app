@@ -1,5 +1,5 @@
 body{
-    background-color: #ff0000;
+    background-color: #000;
     font-size: 30px;
 }
 h1{
@@ -9,7 +9,7 @@ h1{
     text-shadow:3px 3px black;
 }
 .button-class {
-    background-color: #0004ff;
+    background-color: #e00000;
     color: white;
     border: none;
     color: white;
@@ -33,6 +33,7 @@ h1{
 ul.list-group{
     display: grid; grid-template-columns: 1fr 1fr 1fr;
     list-style-type: none;
+    text-align: center;
 }
 @media all and (max-width: 670px) {
     ul.list-group{
