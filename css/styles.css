@@ -1,52 +1,73 @@
-body{
-    background-color: #000;
+body {
     font-size: 30px;
 }
-h1{
+
+h1 {
     font-size: 100px;
     text-align: center;
     color: white;
-    text-shadow:3px 3px black;
+    text-shadow: 3px 3px black;
 }
+
 .button-class {
-    background-color: #e00000;
-    color: white;
+    background-color: white;
+    color: rgb(0, 0, 0);
     border: none;
-    color: white;
     padding: auto;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 50px;
     margin: 4px 2px;
-    -webkit-transition-duration: 0.4s;/*safari*/
+    -webkit-transition-duration: 0.4s;
+    /*safari*/
     transition-duration: 0.4s;
     cursor: pointer;
     border: 2px solid black;
 }
+
 .pokemon-list {
     list-style-type: none;
 }
-.navbar-brand{
+
+.logo-image {
+    background-image: url('./img/International_Pokémon_logo.svg');
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
     font-size: 80px;
 }
-ul.list-group{
-    display: grid; grid-template-columns: 1fr 1fr 1fr;
+
+ul.list-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     list-style-type: none;
     text-align: center;
 }
+
 @media all and (max-width: 670px) {
-    ul.list-group{
+    ul.list-group {
         grid-template-columns: 1fr;
     }
 }
-@media all and (min-width: 680px) and (max-width: 960px){
-    ul.list-group{
+
+@media all and (min-width: 680px) and (max-width: 960px) {
+    ul.list-group {
         grid-template-columns: 1fr 1fr;
     }
 }
-@media all (max-width: 960px) {
-    ul.list-group{
+
+@media all and (max-width: 960px) {
+    ul.list-group {
         grid-gap: 10px;
-        }
     }
+}
